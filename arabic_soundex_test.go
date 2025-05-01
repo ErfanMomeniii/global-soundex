@@ -31,8 +31,8 @@ func TestArabicSoundex_AddEntities_And_Suggest(t *testing.T) {
 	}{
 		{"الحسین", "حسین"},
 		{"الحسی", "حسین"},
-		{"منثور", "منصور"},
 		{"المنصور", "منصور"},
+		{"مهممد", "محمد"},
 	}
 
 	s := newArabicSoundex()
