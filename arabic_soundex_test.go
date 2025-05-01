@@ -7,10 +7,10 @@ func TestArabicSoundex_Encode(t *testing.T) {
 		input    string
 		expected string
 	}{
-		{"عبدالرحمن", "A465"},
-		{"ابويوسف", "Y210"},
-		{"محمد", "M530"},
-		{"محمد123", "M530"},
+		{"عبدالرحمن", "a465"},
+		{"ابويوسف", "y210"},
+		{"محمد", "m530"},
+		{"محمد123", "m530"},
 	}
 
 	s := newArabicSoundex()

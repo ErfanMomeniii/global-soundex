@@ -30,9 +30,9 @@ func main() {
 	ar := gs.NewArabic()
 	ar.AddEntities([]string{"محمد", "محمود", "عبدالله", "أحمد"})
 
-	fmt.Println("Code:", ar.Encode("احمد"))
-	fmt.Println("Match:", ar.Correspond("احمد"))
-	fmt.Println("Suggest:", ar.Suggest("احمذ"))
+	fmt.Println("Code:", ar.Encode("احمد")) // output: a530
+	fmt.Println("Match:", ar.Correspond("احمد")) // output: احمد
+	fmt.Println("Suggest:", ar.Suggest("احمذ")) // output: احمد
 }
 ```
 
@@ -47,12 +47,31 @@ import (
 
 func main() {
 	en := gs.NewEnglish()
-	en.AddEntities([]string{"Robert", "Rupert", "Rubin", "Ashcraft"})
+	en.AddEntities([]string{"Robert", "Rubin", "Ashcraft"})
 
-	fmt.Println("Code:", en.Encode("Robert"))
-	fmt.Println("Match:", en.Correspond("Rupert"))
-	fmt.Println("Suggest:", en.Suggest("Ribert"))
+	fmt.Println("Code:", en.Encode("Robert")) // output: r163
+	fmt.Println("Match:", en.Correspond("Rupert")) // output: Rupert
+	fmt.Println("Suggest:", en.Suggest("Ribert")) // output: Robert
 }
+```
+
+## 🔍 Difference Between `Correspond` and `Suggest`
+
+| Method       | Description                                                                                                                                                                                                             |
+|--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `Correspond` | Returns a known entity if the Soundex code **exactly matches** an entry in the added list of entities. If no match is found, it returns the original input.                                                             |
+| `Suggest`    | Returns the **closest matching entity** based on **Hamming or Levenshtein distance** between the Soundex codes of the input and the known entities. Useful when the input is slightly misspelled or phonetically close. |
+
+### 📘 Example
+
+```go
+en := globalsoundex.NewEnglish()
+en.AddEntities([]string{"Robert", "Rupert", "Rubin"})
+
+fmt.Println(en.Correspond("Rupert")) // Output: Rupert (exact match)
+fmt.Println(en.Correspond("Ribert")) // Output: Ribert (no exact match)
+
+fmt.Println(en.Suggest("Ribert")) // Output: Robert (closest code match)
 ```
 
 ## Contributing
