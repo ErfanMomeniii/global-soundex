@@ -8,7 +8,6 @@
 - 🔄 Normalize inputs (diacritics, punctuation, and casing)
 - 🔠 Language-specific encoding rules
 - 🧠 Intelligent suggestion using Hamming and levenshtein distance
-- 📦 Clean, extensible architecture
 
 ## 📦 Installation
 
