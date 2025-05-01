@@ -12,7 +12,7 @@
 ## 📦 Installation
 
 ```bash
-go get github.com/erfanmomeniii/global-soundex
+go get -u github.com/erfanmomeniii/global-soundex
 ```
 
 ## 🚀 Usage
