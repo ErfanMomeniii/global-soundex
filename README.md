@@ -26,7 +26,7 @@ import (
 )
 
 func main() {
-	ar := gs.NewArabic()
+	ar := gs.New("ar")
 	ar.AddEntities([]string{"محمد", "محمود", "عبدالله", "أحمد"})
 
 	fmt.Println("Code:", ar.Encode("احمد")) // output: a530
@@ -45,7 +45,7 @@ import (
 )
 
 func main() {
-	en := gs.NewEnglish()
+	en := gs.New("en")
 	en.AddEntities([]string{"Robert", "Rubin", "Ashcraft"})
 
 	fmt.Println("Code:", en.Encode("Robert")) // output: r163
@@ -64,7 +64,7 @@ func main() {
 ### 📘 Example
 
 ```go
-en := globalsoundex.NewEnglish()
+en := globalsoundex.New("en")
 en.AddEntities([]string{"Robert", "Rupert", "Rubin"})
 
 fmt.Println(en.Correspond("Rupert")) // Output: Rupert (exact match)
