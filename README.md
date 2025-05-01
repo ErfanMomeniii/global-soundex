@@ -1,9 +1,6 @@
 # global-soundex
-# global-soundex
 
 `global-soundex` is a Go package that provides Soundex phonetic encoding for global languages. Soundex is a phonetic algorithm used to index words by their sound when pronounced. This package is ideal for approximate string matching, name matching, and spelling correction across different languages.
-
----
 
 ## ✨ Features
 
@@ -13,8 +10,6 @@
 - 🧠 Intelligent suggestion using Hamming and levenshtein distance
 - 📦 Clean, extensible architecture
 
----
-
 ## 📦 Installation
 
 ```bash
@@ -22,7 +17,7 @@ go get github.com/erfanmomeniii/global-soundex
 ```
 
 ## 🚀 Usage
-Arabic Example
+### Arabic Example
 ```go
 package main
 
@@ -41,7 +36,7 @@ func main() {
 }
 ```
 
-English Example
+### English Example
 ```go
 package main
 
