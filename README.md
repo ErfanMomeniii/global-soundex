@@ -70,8 +70,9 @@ en.AddEntities([]string{"Robert", "Rupert", "Rubin"})
 
 fmt.Println(en.Correspond("Rupert")) // Output: Rupert (exact match)
 fmt.Println(en.Correspond("Ribert")) // Output: Ribert (no exact match)
+fmt.Println(en.Correspond("Ruperz")) // Output: Rupert (same encoding as "Rupert")
 
-fmt.Println(en.Suggest("Ribert")) // Output: Robert (closest code match)
+fmt.Println(en.Suggest("Ribert"))    // Output: Robert (closest match based on Soundex code)
 ```
 
 ## Contributing
